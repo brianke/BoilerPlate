@@ -77,7 +77,7 @@ namespace BoilerPlate.ViewModel
             set
             {
                 this._MainContentHeight = value;
-                this.RaisePropertyChanged("MainContentHeight");
+                this.RaisePropertyChanged(() => MainContentHeight);
             }
         }
 
