@@ -39,6 +39,7 @@ namespace BoilerPlate.ViewModel
             }
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<LogAreaViewModel>(true);
         }
 
         /// <summary>
@@ -47,11 +48,25 @@ namespace BoilerPlate.ViewModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public MainViewModel Main
+        public MainViewModel MainVM
         {
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the LogArea property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public LogAreaViewModel LogAreaVM
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<LogAreaViewModel>();
             }
         }
 

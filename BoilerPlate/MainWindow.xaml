@@ -7,10 +7,13 @@
         mc:Ignorable="d ignore"
         
         xmlns:view="clr-namespace:BoilerPlate.View"
-        Title="{Binding MainContentTitle}"
+        Title="{Binding WindowTitle}"
+        Icon="{Binding WindowIcon}"
         Height="{Binding MainContentHeight, Mode=TwoWay}"
-        Width="800"
-        DataContext="{Binding Main, Source={StaticResource Locator}}">
+        Width="{Binding MainContentWidth, Mode=TwoWay}"
+        SizeToContent="{Binding SizeWindowToContent, Mode=TwoWay}"
+        ResizeMode="{Binding ResizeMode, Mode=TwoWay}"
+        DataContext="{Binding MainVM, Source={StaticResource Locator}}">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -20,21 +23,19 @@
         </ResourceDictionary>
     </Window.Resources>
 
+    <!-- Using DockPanel so that the LogArea correctly aligns 
+         to the bottom of the screen when window is resized -->
     <DockPanel Name="MasterDockPanel">
         
         <!-- Top Dock Panel (change content here) -->
-        <TextBlock Name="MainViewArea" 
-                    DockPanel.Dock="Top"
-                    FontSize="36"
-                    FontWeight="Bold"
-                    Foreground="Purple"
-                    Text="{Binding WindowTitle}"
-                    VerticalAlignment="Stretch"
-                    HorizontalAlignment="Center"
-                    TextWrapping="Wrap" />
-        
+        <StackPanel DockPanel.Dock="Top">
+                       
+            <view:MainContentUserControl />
+            
+        </StackPanel>
+
         <!-- Bottom Dock Panel (logging area, DO NOT change) -->
-        <Expander Name="LogArea" 
+        <Expander Name="LogAreaExpander" 
                   DockPanel.Dock="Bottom"
                   Header="View Log" 
                   HorizontalAlignment="Stretch" 
@@ -42,11 +43,8 @@
                   Margin="10,10,10,10"
                   IsExpanded="{Binding LogAreaIsExpanded, Mode=TwoWay}">
             
-            <Grid Background="#FFE5E5E5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding LogAreaGridHeight}" />
-                </Grid.RowDefinitions>
-            </Grid>
+            <view:LogAreaUserControl />
+
         </Expander>
         
     </DockPanel>
