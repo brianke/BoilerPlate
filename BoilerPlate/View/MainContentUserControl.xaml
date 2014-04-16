@@ -4,10 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             DataContext="{Binding Main_VM, Source={StaticResource Locator}}">
+    
     <Grid Background="Gray">
         <ToggleButton Content="Resize"
                 Width="75" Height="25"
-                IsChecked="{Binding MainVM.Button_IsChecked, Source={StaticResource Locator}, Mode=TwoWay}"/>
+                IsChecked="{Binding Button_IsChecked, Mode=TwoWay}"/>
     </Grid>
 </UserControl>

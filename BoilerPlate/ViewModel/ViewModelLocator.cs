@@ -48,7 +48,7 @@ namespace BoilerPlate.ViewModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public MainViewModel MainVM
+        public MainViewModel Main_VM
         {
             get
             {
@@ -62,7 +62,7 @@ namespace BoilerPlate.ViewModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public LogAreaViewModel LogAreaVM
+        public LogAreaViewModel LogArea_VM
         {
             get
             {

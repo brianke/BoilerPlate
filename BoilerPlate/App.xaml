@@ -8,9 +8,10 @@
              mc:Ignorable="d">
     
     <Application.Resources>
-        <!--Global View Model Locator-->
+        <!-- Global View Model Locator -->
         <vm:ViewModelLocator x:Key="Locator"
                              d:IsDataSource="True" />
+              
     </Application.Resources>
     
 </Application>

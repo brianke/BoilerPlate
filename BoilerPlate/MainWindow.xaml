@@ -13,7 +13,7 @@
         Width="{Binding MainContentWidth, Mode=TwoWay}"
         SizeToContent="{Binding SizeWindowToContent, Mode=TwoWay}"
         ResizeMode="{Binding ResizeMode, Mode=TwoWay}"
-        DataContext="{Binding MainVM, Source={StaticResource Locator}}">
+        DataContext="{Binding Main_VM, Source={StaticResource Locator}}">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -25,15 +25,16 @@
 
     <!-- Using DockPanel so that the LogArea correctly aligns 
          to the bottom of the screen when window is resized -->
-    <DockPanel Name="MasterDockPanel">
+    <DockPanel x:Name="MasterDockPanel">
         
-        <!-- Top Dock Panel (change content here) -->
-        <StackPanel DockPanel.Dock="Top">
-                       
-            <view:MainContentUserControl />
+<!--
+        <ContentControl x:Name="MainWindowContent" 
+                        DockPanel.Dock="Top"
+                        Content="{Binding MainWindowContent, UpdateSourceTrigger=PropertyChanged}"/>    
+-->
+        <view:MainContentUserControl DockPanel.Dock="Top" />
             
-        </StackPanel>
-
+            
         <!-- Bottom Dock Panel (logging area, DO NOT change) -->
         <Expander Name="LogAreaExpander" 
                   DockPanel.Dock="Bottom"

@@ -8,7 +8,7 @@
              
              Height="{Binding LogAreaHeight, Mode=TwoWay}"
              Width="{Binding LogAreaWidth, Mode=TwoWay}"
-             DataContext="{Binding LogAreaVM, Source={StaticResource Locator}}">
+             DataContext="{Binding LogArea_VM, Source={StaticResource Locator}}">
 
     <Grid Background="#FFE5E5E5">
         <Grid.RowDefinitions>

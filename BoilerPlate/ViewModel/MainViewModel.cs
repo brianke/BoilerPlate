@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using System;
+using System.Collections.ObjectModel;
+using BoilerPlate.View;
 
 namespace BoilerPlate.ViewModel
 {
@@ -153,6 +155,24 @@ namespace BoilerPlate.ViewModel
         }
         private int _MainContentWidth = 800;
 
+
+        public UserControl MainWindowContent
+        {
+            get
+            {
+                return _MainWindowContent;
+            }
+            set
+            {
+                if (_MainWindowContent != value)
+                {
+                    _MainWindowContent = value;
+                    RaisePropertyChanged(() => MainWindowContent);
+                }
+            }
+        }
+        private UserControl _MainWindowContent;
+
         #endregion WindowProperties
 
         #region ExpanderProperties
@@ -227,6 +247,8 @@ namespace BoilerPlate.ViewModel
         public MainViewModel()
         {
             logArea = new LogAreaViewModel();
+            //UserControl _content = new MainContentUserControl();
+            //this.MainWindowContent = _content;
         }
 
 

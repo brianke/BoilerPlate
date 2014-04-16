@@ -18,6 +18,5 @@ namespace BoilerPlate
             Closing += (s, e) => ViewModelLocator.Cleanup();
         }
 
-
     }
 }
